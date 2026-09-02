@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
+<div style="max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+    <div style="text-align: center; margin-bottom: 20px;">
+        <h2 style="color: #2c3e50;">Welcome to bookingSuite! 🏨</h2>
+    </div>
+    <p>Verification Required</p>-->
+
+    <p>Hi <strong th:text="${userEmail}">User</strong>,</p>
+    <p>Use the following one-time password to securely log in to your BookingSuite account. This code is valid for <strong>5 minutes</strong>.</p>
+
+    <div class="otp-box"><strong th:text="${otp}"></strong> </div>
+
+    <p>If you did not request this code, please ignore this email or contact support if you have concerns.</p>
+
+    <p>If you have any questions, simply reply to this email.</p>
+
+    <p>Best Regards,<br><strong>The bookingSuite Team</strong></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
+<div style="max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+    <div style="text-align: center; margin-bottom: 20px;">
+        <h2 style="color: #2c3e50;">Welcome to bookingSuite! 🏨</h2>
+    </div>
+
+    <p>Hi <strong th:text="${userName}">User</strong>,</p>
+
+    <p>Your account has been successfully created. We are thrilled to have you join our community!</p>
+
+    <p>With your new account, you can:</p>
+    <ul>
+        <li>Book standard and luxury rooms instantly</li>
+        <li>Manage your upcoming reservations</li>
+        <li>View your booking history and invoices</li>
+    </ul>
+
+    <div style="text-align: center; margin: 30px 0;">
+        <a th:href="${loginUrl}"
+           style="background-color: #007bff; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+            Log In to Your Account
+        </a>
+    </div>
+
+    <p>If you have any questions, simply reply to this email.</p>
+
+    <p>Best Regards,<br><strong>The bookingSuite Team</strong></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+spring:
+  application:
+    name: bookingSuite
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/bookingSuite}
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:vinayak}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID:621375138559-3rcvcdu2gd3fb61o3qrtcq7pso51uo51.apps.googleusercontent.com}
+            client-secret: ${GOOGLE_CLIENT_SECRET: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}
+            scope: email, profile
+  mail:
+    host: ${SMTP_HOST:smtp.gmail.com}
+    port: ${SMTP_PORT:587}
+    username: ${SMTP_USERNAME:vinkartmail123@gmail.com}
+    password: ${SMTP_PASSWORD:gqyuultoaogwlxzg}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+  cache:
+    type: ${CACHE_TYPE:redis}
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+app:
+  email:
+    sender-address: ${EMAIL_SENDER_ADDRESS:vinkartmail123@gmail.com}
+    sender-name: ${EMAIL_SENDER_NAME:BookingSuite Support}
+
+server:
+  servlet:
+    context-path: /api/v1
+  port: ${SERVER_PORT:8080}
+
+jwt:
+  secret: ${JWT_SECRET:ahsyebbbdjsrsgjdkdbdgtulendbvstatuhduhdcvdsjvsahfdsjdrasdkckbdshkbdkdcweuyc}
+
+stripe:
+  secret-key: ${STRIPE_SECRET_KEY:sk_test_51U8hPu0ga1DJcnRnckfksAAKZ5h3fbY8n0xLyK4RpWycyHs7Hu5V3ovOllZJX7QkPCDaHMx61PNvmAfakGcny7W600TdixKOqq}
+  webhook-secret: ${STRIPE_WEBHOOK_SECRET:whsec_15cc6166240df1ac6e77031e66447f5c804620fdada0b38d4b68112fd625b92e}
+
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: true
+
+frontend:
+  url: ${FRONTEND_URL:http://localhost:5173}
